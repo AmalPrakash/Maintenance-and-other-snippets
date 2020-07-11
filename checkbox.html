@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LIVER</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          var arr = [0, 0, 0, 0, 0, 0];
+          $.each($("input[name='liver']:checked"), function () {
+            arr.splice($(this).val(), 1, "1");
+          });
+          alert("SYMPTOM ARRAY: " + arr.join(", "));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      <label><input type="checkbox" value="0" name="liver" /> box0</label>
+      <label><input type="checkbox" value="1" name="liver" /> box1</label>
+      <label><input type="checkbox" value="2" name="liver" /> box2</label>
+      <label><input type="checkbox" value="3" name="liver" /> box3</label>
+      <label><input type="checkbox" value="4" name="liver" /> box4</label>
+      <label><input type="checkbox" value="5" name="liver" /> box5</label>
+      <br />
+      <button type="button">Display array</button>
+    </form>
+  </body>
+</html>
